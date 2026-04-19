@@ -5,7 +5,7 @@
 
 import { motion, useScroll, useSpring } from 'motion/react';
 import { 
-  Scale, 
+  FileText, 
   MapPin, 
   Phone, 
   Mail, 
@@ -119,8 +119,8 @@ export default function App() {
       <section id="home" className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/seed/law-office/1920/1080?brightness=0.3" 
-            alt="Law Office Background" 
+            src="https://picsum.photos/seed/minimal-abstract/1920/1080?brightness=0.3" 
+            alt="Minimal Background" 
             className="w-full h-full object-cover opacity-20 grayscale"
             referrerPolicy="no-referrer"
           />
@@ -160,70 +160,47 @@ export default function App() {
             </motion.div>
           </div>
         </div>
-
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-brand-accent opacity-50"
-        >
-          <div className="w-px h-16 bg-brand-accent/30 mx-auto mb-2"></div>
-          <span className="text-[10px] uppercase tracking-widest">Scroll</span>
-        </motion.div>
       </section>
 
       {/* Why Us / About Section */}
-      <section id="lawyer" className="py-24 bg-white scroll-mt-header">
+      <section id="lawyer" className="py-24 bg-white scroll-mt-header text-center">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="aspect-[4/5] overflow-hidden">
-                <img 
-                  src="https://picsum.photos/seed/legal-library/800/1000" 
-                  alt="Legal Library" 
-                  className="w-full h-full object-cover filter brightness-90 grayscale hover:grayscale-0 transition-all duration-700"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="absolute -bottom-8 -right-8 bg-brand-secondary p-12 shadow-2xl hidden md:block">
-                <p className="text-6xl font-serif text-brand-accent italic mb-2">30+</p>
-                <p className="text-xs uppercase tracking-widest font-bold">Έτη Αδιάλειπτης<br/>Άσκησης</p>
-              </div>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="inline-block p-12 mb-12 border border-brand-accent/20 bg-brand-secondary/30 relative">
+              <p className="text-7xl font-serif text-brand-accent italic mb-2">30+</p>
+              <p className="text-xs uppercase tracking-widest font-bold">Έτη Αδιάλειπτης Άσκησης</p>
+              <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-brand-accent"></div>
+              <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b-2 border-r-2 border-brand-accent"></div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-medium mb-8">Ελπίδα Στ. Μανουρά</h2>
-              <h3 className="text-brand-accent font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">ΑΠΟΦΟΙΤΟΣ ΑΠΘ | ΔΙΚΗΓΟΡΟΣ ΠΑΡ' ΑΡΕΙΩ ΠΑΓΩ</h3>
-              <div className="space-y-6 text-lg leading-relaxed text-brand-primary opacity-80">
-                <p>
-                  Από το 1994, προσφέρω νομικές υπηρεσίες με επίκεντρο τον άνθρωπο. Πιστεύω στην ειλικρίνεια και στη συνέπεια, μακριά από λογικές εκμετάλλευσης.
-                </p>
-                <p>
-                  Η εμπειρία τριών δεκαετιών μου επιτρέπει να χειρίζομαι σύνθετες υποθέσεις με αποφασιστικότητα και στρατηγική σκέψη. Στόχος μου είναι πάντα η ουσιαστική δικαίωση του εντολέα μου.
-                </p>
-                <div className="grid grid-cols-2 gap-8 pt-8">
-                  <div>
-                    <Award className="text-brand-accent mb-4" size={32} />
-                    <h4 className="font-bold text-sm uppercase tracking-widest mb-2">Εμπιστοσύνη</h4>
-                    <p className="text-sm opacity-60">Διαφανείς διαδικασίες και ειλικρινής επικοινωνία.</p>
-                  </div>
-                  <div>
-                    <Users className="text-brand-accent mb-4" size={32} />
-                    <h4 className="font-bold text-sm uppercase tracking-widest mb-2">Προσωπική Επαφή</h4>
-                    <p className="text-sm opacity-60">Κάθε υπόθεση εξετάζεται εξατομικευμένα.</p>
-                  </div>
+            <h2 className="text-4xl md:text-5xl font-medium mb-8">Ελπίδα Στ. Μανουρά</h2>
+            <h3 className="text-brand-accent font-sans uppercase tracking-[0.2em] text-sm font-bold mb-6">ΑΠΟΦΟΙΤΟΣ ΑΠΘ | ΔΙΚΗΓΟΡΟΣ ΠΑΡ' ΑΡΕΙΩ ΠΑΓΩ</h3>
+            <div className="space-y-6 text-lg leading-relaxed text-brand-primary opacity-80">
+              <p>
+                Από το 1994, προσφέρω νομικές υπηρεσίες με επίκεντρο τον άνθρωπο. Πιστεύω στην ειλικρίνεια και στη συνέπεια, μακριά από λογικές εκμετάλλευσης.
+              </p>
+              <p>
+                Η εμπειρία τριών δεκαετιών μου επιτρέπει να χειρίζομαι σύνθετες υποθέσεις με αποφασιστικότητα και στρατηγική σκέψη. Στόχος μου είναι πάντα η ουσιαστική δικαίωση του εντολέα μου.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 max-w-2xl mx-auto">
+                <div className="flex flex-col items-center">
+                  <Award className="text-brand-accent mb-4" size={32} />
+                  <h4 className="font-bold text-sm uppercase tracking-widest mb-2">Εμπιστοσύνη</h4>
+                  <p className="text-sm opacity-60">Διαφανείς διαδικασίες και ειλικρινής επικοινωνία.</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <Users className="text-brand-accent mb-4" size={32} />
+                  <h4 className="font-bold text-sm uppercase tracking-widest mb-2">Προσωπική Επαφή</h4>
+                  <p className="text-sm opacity-60">Κάθε υπόθεση εξετάζεται εξατομικευμένα.</p>
                 </div>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -243,7 +220,7 @@ export default function App() {
                 desc: 'Πλήρης κάλυψη σε εργασιακές διαφορές, αποζημιώσεις και εργατικά ατυχήματα. Εξειδίκευση ως Εργατολόγος.' 
               },
               { 
-                icon: <Scale size={32} />, 
+                icon: <FileText size={32} />, 
                 title: 'Οικογενειακό Δίκαιο', 
                 desc: 'Διαζύγια, επιμέλεια τέκνων, διατροφές και οικογενειακές μεσολαβήσεις με σεβασμό στις ευαίσθητες ισορροπίες.' 
               },
